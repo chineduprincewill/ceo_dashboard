@@ -10,12 +10,12 @@ const TSCURRComponent = () => {
                 <span className='text-4xl font-light uppercase'>tx_curr</span>
             </div>
             <div className='w-full flex px-4'>
-                <div className='w-full md:w-1/3 space-y-2'>
+                <div className='w-full md:w-1/3 space-y-4'>
                     <span className='text-xs text-extralight'>Percent TX_CURR</span>
                     <div>
                         <div className='flex border-4 border-green-500 rounded-full px-3 py-4 max-w-max'>
-                            <span className='text-5xl'>32</span>
-                            <span className='text-xs'>%</span>
+                            <span className='text-5xl xl:text-7xl'>32</span>
+                            <span className='text-xs xl:text-lg'>%</span>
                         </div>
                     </div>
                 </div>
