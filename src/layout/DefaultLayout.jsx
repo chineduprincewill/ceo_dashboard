@@ -8,7 +8,7 @@ const DefaultLayout = () => {
             <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                 <Header />
                 <main>
-                    <div className="max-w-screen-2xl p-0">
+                    <div className="w-screen p-0">
                         <Outlet />
                     </div>
                 </main>
