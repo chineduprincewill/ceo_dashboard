@@ -5,12 +5,12 @@ const PVLSLeadIndicators = () => {
         <div className='w-full md:w-[32%] md:flex md:justify-between py-4'>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
                 <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                    <span className='text-3xl font-bold'>178,494</span>
+                    <span className='text-xl xl:text-3xl font-bold'>178,494</span>
                     <span className='text-xs'>Eligibles</span>
                 </div>
-                <div className='py-2 flex justify-between items-baseline'>
+                <div className='py-2 grid xl:flex xl:justify-between xl:items-baseline'>
                     <span className='text-[10px]'>Eligibles covered</span>
-                    <span className='flex p-1 rounded-full shadow-md'>
+                    <span className='flex p-1 rounded-full shadow-md max-w-max'>
                         <span className='text-xl font-bold'>92</span>
                         <span className='text-xs'>%</span>
                     </span>
@@ -18,25 +18,25 @@ const PVLSLeadIndicators = () => {
             </div>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
                 <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                    <span className='text-3xl font-bold'>...</span>
+                    <span className='text-xl xl:text-3xl font-bold'>...</span>
                     <span className='text-xs'>...</span>
                 </div>
-                <div className='py-2 flex justify-between'>
+                <div className='py-2 grid xl:flex xl:justify-between xl:items-baseline'>
                     <span className='text-[10px]'>Sample-Result Rate</span>
-                    <span className='flex p-1 rounded-full shadow-md'>
+                    <span className='flex p-1 rounded-full shadow-md max-w-max'>
                         <span className='text-xl font-bold'>95</span>
                         <span className='text-xs'>%</span>
                     </span>
                 </div>
             </div>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
-                    <span className='text-3xl font-bold'>...</span>
+                <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
+                    <span className='text-xl xl:text-3xl font-bold'>...</span>
                     <span className='text-xs'>...</span>
                 </div>
-                <div className='py-2 flex justify-between items-baseline'>
+                <div className='py-2 grid xl:flex xl:justify-between xl:items-baseline'>
                     <span className='text-[10px]'>Rejection Rate</span>
-                    <span className='flex p-1 rounded-full shadow-md'>
+                    <span className='flex p-1 rounded-full shadow-md max-w-max'>
                         <span className='text-xl font-bold'>0</span>
                         <span className='text-xs'>%</span>
                     </span>
