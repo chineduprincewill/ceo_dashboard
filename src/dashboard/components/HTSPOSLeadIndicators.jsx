@@ -4,11 +4,11 @@ const HTSPOSLeadIndicators = () => {
     return (
         <div className='w-full md:w-[33%] md:flex md:justify-between py-4'>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between border-b border-gray-300 dark:border-gray-700 py-1'>
-                    <span className='text-xl font-bold'>192</span>
+                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
+                    <span className='text-2xl font-bold'>192</span>
                     <span className='text-xs'>Index Cases</span>
                 </div>
-                <div className='pl-1 flex justify-between'>
+                <div className='pl-1 flex justify-between items-baseline'>
                     <span className='text-[10px]'>Index Stream</span>
                     <span className='flex p-1 rounded-full shadow-md'>
                         <span className='text-xl font-bold'>13</span>
