@@ -4,7 +4,7 @@ const HTSPOSLeadIndicators = () => {
     return (
         <div className='w-full md:w-[33%] md:flex md:justify-between py-4'>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
+                <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
                     <span className='text-3xl font-bold'>192</span>
                     <span className='text-xs'>Index Cases</span>
                 </div>
@@ -17,7 +17,7 @@ const HTSPOSLeadIndicators = () => {
                 </div>
             </div>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
+                <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
                     <span className='text-3xl font-bold'>214</span>
                     <span className='text-xs'>PITC</span>
                 </div>
@@ -30,7 +30,7 @@ const HTSPOSLeadIndicators = () => {
                 </div>
             </div>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
+                <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
                     <span className='text-3xl font-bold'>55</span>
                     <span className='text-xs'>KeyPop Cases</span>
                 </div>
@@ -43,7 +43,7 @@ const HTSPOSLeadIndicators = () => {
                 </div>
             </div>
             <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
-                <div className='flex justify-between items-baseline border-b border-gray-300 dark:border-gray-700 py-1'>
+                <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
                     <span className='text-3xl font-bold'>249</span>
                     <span className='text-xs'>Comm Cases</span>
                 </div>

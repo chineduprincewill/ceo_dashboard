@@ -5,7 +5,7 @@ const TXCURRLeadIndicators = () => {
     <div className='w-full md:w-[32%] md:flex md:justify-between py-4'>
         <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
             <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                <span className='text-4xl font-bold'>8</span>
+                <span className='text-3xl font-bold'>8</span>
                 <span className='text-xs'>PMTCT</span>
             </div>
             <div className='py-2 flex justify-between items-baseline'>
@@ -18,7 +18,7 @@ const TXCURRLeadIndicators = () => {
         </div>
         <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
             <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                <span className='text-4xl font-bold'>58</span>
+                <span className='text-3xl font-bold'>58</span>
                 <span className='text-xs'>TX_NEW</span>
             </div>
             <div className='py-2 flex justify-between items-baseline'>
@@ -31,7 +31,7 @@ const TXCURRLeadIndicators = () => {
         </div>
         <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
             <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                <span className='text-4xl font-bold'>67,650</span>
+                <span className='text-3xl font-bold'>67,650</span>
                 <span className='text-xs'>IIT</span>
             </div>
             <div className='py-2 flex justify-between items-baseline'>
@@ -44,7 +44,7 @@ const TXCURRLeadIndicators = () => {
         </div>
         <div className='w-full grid md:w-[23%] p-2 rounded-md shadow-xl border border-gray-300 dark:border-gray-700'>
             <div className='grid border-b border-gray-300 dark:border-gray-700 py-1'>
-                <span className='text-4xl font-bold'>3,516</span>
+                <span className='text-3xl font-bold'>3,516</span>
                 <span className='text-xs'>Returned</span>
             </div>
             <div className='py-2 flex justify-between items-baseline'>
