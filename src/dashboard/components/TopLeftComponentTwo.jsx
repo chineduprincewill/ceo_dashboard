@@ -5,8 +5,8 @@ import { LuMicroscope } from 'react-icons/lu'
 
 const TopLeftComponentTwo = ({ loc }) => {
     return (
-        <div className='w-full md:w-[48%]'>
-            <div className='w-full flex justify-between items-center shadow-xl px-4 py-2.5 rounded-md'>
+        <div className='w-full md:w-[48%] md:space-y-5'>
+            <div className='w-full flex justify-between items-center shadow-xl px-4 py-3 rounded-md'>
                 <BsCapsulePill size={80} className='text-gray-300 dark:text-gray-600' />
                 <div className='grid text-end animate-pulse'>
                     <span className='text-4xl text-green-600'>179,784</span>
@@ -15,7 +15,7 @@ const TopLeftComponentTwo = ({ loc }) => {
                     <span className='font-extralight text-xs'>TREATMENT GAP</span>
                 </div>
             </div>
-            <div className='w-full flex justify-between items-center shadow-xl px-4 py-2.5 rounded-md'>
+            <div className='w-full flex justify-between items-center shadow-xl px-4 py-3 rounded-md'>
                 <FaAward size={80} className='text-gray-300 dark:text-gray-600' />  
                 <div className='grid text-end animate-pulse'>
                     <span className='text-4xl text-green-600'>58</span>
@@ -24,7 +24,7 @@ const TopLeftComponentTwo = ({ loc }) => {
                     <span className='font-extralight text-xs'>CASE FINDING GAP</span>
                 </div> 
             </div>
-            <div className='w-full flex justify-between items-center shadow-xl px-4 py-2.5 rounded-md'>
+            <div className='w-full flex justify-between items-center shadow-xl px-4 py-3 rounded-md'>
                 <LuMicroscope size={80} className='text-gray-300 dark:text-gray-600' />
                 <div className='grid text-end animate-pulse'>
                     <span className='text-4xl text-green-600'>84,415</span>
