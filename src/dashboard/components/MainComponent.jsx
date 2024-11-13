@@ -45,7 +45,7 @@ const MainComponent = ({ active }) => {
                     <TopLeftComponentTwo loc={active} />
                 </div>
                 <div className='w-full md:w-[49%] border'>
-                    <GoogleMapComponent loading={loading} selectedState={active} markers={pmarkers && pmarkers} />
+                    <GoogleMapComponent loading={loading} selectedState={active} markers={stateDetail !== null && generateFilledmapMarkers(stateDetail)} />
                 </div>
             </div>
             <div className='w-full px-4 grid space-y-4 md:space-y-0 md:flex md:justify-between'>
