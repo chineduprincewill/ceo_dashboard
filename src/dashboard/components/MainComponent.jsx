@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import GoogleMapComponent from '../../common/GoogleMapComponent'
-import { fetchStateDetail } from '../../apis/dashboardActions'
+import { fetchTxcurrData, fetchTxhtsposData } from '../../apis/dashboardActions'
 import { generateFilledmapMarkers } from '../../apis/functions';
 import TopLeftComponentOne from './TopLeftComponentOne';
 import TopLeftComponentTwo from './TopLeftComponentTwo';
@@ -12,13 +12,19 @@ import TXCURRLeadIndicators from './TXCURRLeadIndicators';
 import PVLSLeadIndicators from './PVLSLeadIndicators';
 import { MdArrowCircleUp, MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import { LuMinusCircle, LuPlusCircle } from 'react-icons/lu';
+import { fetchStateDetail } from '../../apis/casefindersActions';
 
 const MainComponent = ({ active }) => {
 
     const [stateDetail, setStateDetail] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [fetching, setFetching] = useState(false);
     const [pmarkers, setPmarkers] = useState();
+    const [txcurrdata, setTxcurrdata] = useState(null);
+    const [txhtsposdata, setTxhtsposdata] = useState(null);
+    const fy = import.meta.env.VITE_FISCAL_YEAR;
+
 
     const [closeIndicators, setCloseIndicators] = useState(false);
 
@@ -36,13 +42,24 @@ const MainComponent = ({ active }) => {
         }
     }, [active]) 
 
+    useEffect(() => {
+        fetchTxcurrData({ state: active, fy }, setTxcurrdata, setError, setFetching);
+        fetchTxhtsposData({ state_referred: active, fy }, setTxhtsposdata, setError, setFetching);
+
+        const intervalId = setInterval(() => {
+            fetchTxcurrData({ state: active, fy }, setTxcurrdata, setError, setFetching);
+            fetchTxhtsposData({ state_referred: active, fy }, setTxhtsposdata, setError, setFetching);
+        }, 60000); // 60 seconds
+      
+        return () => clearInterval(intervalId);
+    }, [])
 
     return (
         <div className='w-full grid space-y-2'>
             <div className='w-full grid md:flex my-2 md:justify-between space-y-4 md:space-y-0 px-4'>
                 <div className='w-full md:flex md:justify-between md:w-[49%]'>
                     <TopLeftComponentOne loc={active} />
-                    <TopLeftComponentTwo loc={active} />
+                    <TopLeftComponentTwo loc={active} txcurrdata={txcurrdata} txhtsposdata={txhtsposdata} />
                 </div>
                 <div className='w-full md:w-[49%] border'>
                     <GoogleMapComponent loading={loading} selectedState={active} markers={stateDetail !== null && generateFilledmapMarkers(stateDetail)} />

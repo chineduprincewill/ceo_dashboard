@@ -28,12 +28,12 @@ export const fetchStatesSummary = async ( token, data, setStatesSummary, setErro
 }
 
 
-export const fetchStateDetail = async ( data, setStateDetail, setError, setLoading ) => {
+export const fetchTxcurrData = async ( data, setTxcurrdata, setError, setFetching ) => {
 
-    setLoading(true);
+    setFetching(true);
 
     try{
-        const response  = await axios.post(`public-state-detail`,
+        const response  = await axios.post(`fetch-tx-curr-trend`,
             data,
             {
                 headers: { 'Accept' : 'application/json' }
@@ -41,7 +41,7 @@ export const fetchStateDetail = async ( data, setStateDetail, setError, setLoadi
         );    
 
         console.log(response.data);
-        setStateDetail(response.data);
+        setTxcurrdata(response.data);
     }
     catch (err) {
         if (!err?.response) {
@@ -52,7 +52,35 @@ export const fetchStateDetail = async ( data, setStateDetail, setError, setLoadi
         }
     }
 
-    setLoading(false);
+    setFetching(false);
+}
+
+
+export const fetchTxhtsposData = async ( data, setTxhtsposdata, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-positive-cases`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTxhtsposdata(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
 }
 
 

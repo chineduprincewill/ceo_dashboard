@@ -2,6 +2,18 @@ import React from 'react'
 import { TfiTimer } from 'react-icons/tfi'
 
 const TopLeftComponentOne = ({ loc }) => {
+
+    const endOfFy = new Date('2025-09-30T00:00:00');
+
+    // Get the current date and time
+    const currentDate = new Date();
+
+    // Calculate the difference in milliseconds
+    const diffInMs = endOfFy - currentDate;
+
+    // Convert the difference to days
+    const daysToCopEnd = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+
     return (
         <div className='w-full md:w-[48%] space-y-8'>
             <div className='w-full flex space-x-4 items-center shadow-xl px-4 py-8'>
@@ -15,7 +27,7 @@ const TopLeftComponentOne = ({ loc }) => {
             <div className='w-full flex justify-between items-center shadow-xl px-4 py-7 text-end bg-[#005072] dark:bg-gray-300 rounded-md'>
                 <TfiTimer size={80} className='text-gray-400'/>
                 <div className='grid space-y-2'>
-                    <span className='text-8xl animate-pulse text-gray-200 dark:text-[#005072]'>322</span>
+                    <span className='text-8xl text-gray-200 dark:text-[#005072]'>{daysToCopEnd}</span>
                     <span className='uppercase text-gray-200 dark:text-[#005072]'>days to cop end</span>
                 </div>
             </div>
