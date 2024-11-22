@@ -15,7 +15,9 @@ const LeadIndicators = ({ totalindex, totalpitc, totalkeypop, totalcomm, totalpm
                 <div className='py-2 grid xl:flex xl:justify-between xl:items-baseline'>
                     <span className='text-[10px]'>Index Stream</span>
                     <span className='flex p-1 rounded-full shadow-md max-w-max'>
-                        <span className='text-xl font-bold'><span className='text-gray-300 animate-pulse'>00</span></span>
+                        <span className='text-xl font-bold'>
+                            { totalindex ? totalindex?.totalIndex?.percentage : <span className='text-gray-300 animate-pulse'>00</span>}
+                        </span>
                         <span className='text-xs'>%</span>
                     </span>
                 </div>
