@@ -6,7 +6,7 @@ import NotificationLoader from './NotificationLoader';
 // Define the container and map styles
 const containerStyle = {
     width: '100%',
-    height: '400px'
+    height: '385px'
 };
 
 // Center position of the map

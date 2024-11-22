@@ -5,18 +5,27 @@ import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement
 // Register required Chart.js components
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, Filler);
 
-const LineChart = ({ labels, data, barsColor, bgColor, title }) => {
+const LineChart = ({ trend }) => {
 
   const chartData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr'], // X-axis labels
+    labels: trend?.TX_Curr_month?.data[0].split(','), // X-axis labels
     datasets: [
       {
-        label: '',
-        data: [13, 12, 16, 17], // Y-axis data (corresponding to the labels)
-        borderColor: 'rgba(75, 192, 192, 1)', // Line color
-        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area color (under the line)
+        label: 'Achievements',
+        data: trend?.TX_Curr_achievements?.data[0].split(','), // Y-axis data (corresponding to the labels)
+        borderColor: 'rgba(5, 59, 150, 1)', // Line color
+        backgroundColor: 'rgba(5, 59, 150, 0.4)', // Area color (under the line)
         fill: true, // Whether to fill the area under the line
-        tension: 0.4, // Smoothness of the line (0 = sharp, 1 = smooth curve)
+        tension: 0.4,  //Smoothness of the line (0 = sharp, 1 = smooth curve)
+        borderWidth: 2, // Border width of the line
+      },
+      {
+        label: 'Targets',
+        data: trend?.TX_Curr_target?.data[0].split(','), // Y-axis data (corresponding to the labels)
+        borderColor: 'rgba(75, 192, 192, 1)', // Line color
+        backgroundColor: 'rgba(75, 192, 192, 0.4)', // Area color (under the line)
+        fill: true, // Whether to fill the area under the line
+        tension: 0.4,  //Smoothness of the line (0 = sharp, 1 = smooth curve)
         borderWidth: 2, // Border width of the line
       },
     ],
@@ -46,7 +55,7 @@ const LineChart = ({ labels, data, barsColor, bgColor, title }) => {
     },
   };
 
-    return <Line data={chartData} options={options} />
+  return <Line data={chartData} options={options} />
 }
 
 export default LineChart

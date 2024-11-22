@@ -12,11 +12,11 @@ const BarChart = ({ labels, data, barsColor, title }) => {
     console.log(data);
 
     const chartData = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr'], // X-axis labels
+        labels: ['CA', 'CE', 'FY25'], // X-axis labels
         datasets: [
           {
             label: '',
-            data: [13, 12, 16, 20], // Y-axis data (corresponding to the labels)
+            data: [45, 1681, 12028], // Y-axis data (corresponding to the labels)
             backgroundColor: 'rgba(75, 192, 192, 0.6)', // Bar color
             borderColor: 'rgba(75, 192, 192, 1)', // Border color of the bars
             borderWidth: 1, // Border width of the bars
@@ -30,6 +30,12 @@ const BarChart = ({ labels, data, barsColor, title }) => {
             legend: { position: 'top' },
             title: { display: true },
         },
+        elements: {
+          bar: {
+            barThickness: 6, // Optional: Set the thickness for further customization
+          },
+        },
+        indexAxis: 'y', // This makes the bar chart horizontal
     };
     
     return <Bar data={chartData} options={options} />;

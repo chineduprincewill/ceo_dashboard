@@ -56,7 +56,7 @@ export const fetchTxcurrData = async ( data, setTxcurrdata, setError, setFetchin
 }
 
 
-export const fetchTxhtsposData = async ( data, setTxhtsposdata, setError, setFetching ) => {
+export const fetchHtsposData = async ( data, setTxhtsposdata, setError, setFetching ) => {
 
     setFetching(true);
 
@@ -83,6 +83,332 @@ export const fetchTxhtsposData = async ( data, setTxhtsposdata, setError, setFet
     setFetching(false);
 }
 
+
+export const fetchHtststData = async ( data, setHtststdata, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-htst-gap`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setHtststdata(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+
+export const fetchPvlsData = async ( data, setPvlsdata, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch_PVLS_and_percentage`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setPvlsdata(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+
+export const fetchHtsPosindicators = async ( data, setHtsposindicators, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`primary_indicator_hts_pos`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setHtsposindicators(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+
+export const fetchTotalindex = async ( data, setTotalindex, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-index`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotalindex(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTotalpitc = async ( data, setTotalpitc, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-pitc`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotalpitc(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTotalkeypop = async ( data, setTotalkeypop, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-keypop`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotalkeypop(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTotalcomm = async ( data, setTotalcomm, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-community`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotalcomm(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTotalpmtct = async ( data, setTotalpmtct, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-pmtc`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotalpmtct(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTotalIIT = async ( data, setTotaliit, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-total-IIT`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTotaliit(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchEligibles = async ( data, setEligibles, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-vl-eligible-percentage`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setEligibles(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchReturned = async ( data, setReturned, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-tx-rtt`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setReturned(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchTestingTATDays = async ( setTestingtatdays, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.get(`fetch-testing-tat-days`,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setTestingtatdays(response.data);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
 
 export const fetchStateLgas = async ( token, data, setLgas, setError ) => {
     try{

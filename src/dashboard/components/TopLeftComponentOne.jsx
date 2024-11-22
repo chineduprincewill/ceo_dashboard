@@ -3,7 +3,7 @@ import { TfiTimer } from 'react-icons/tfi'
 
 const TopLeftComponentOne = ({ loc }) => {
 
-    const endOfFy = new Date('2025-09-30T00:00:00');
+    const endOfFy = new Date('2025-10-01T00:00:00');
 
     // Get the current date and time
     const currentDate = new Date();
@@ -15,7 +15,7 @@ const TopLeftComponentOne = ({ loc }) => {
     const daysToCopEnd = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
     return (
-        <div className='w-full md:w-[48%] space-y-8'>
+        <div className='w-full md:w-[48%] space-y-4'>
             <div className='w-full flex space-x-4 items-center shadow-xl px-4 py-8'>
                 <img src='/assets/apinlogo.png' alt='logo' width="120px" />
                 <div className='grid border-l-2 border-gray-800 dark:border-gray-100 px-3 py-2'>
