@@ -28,7 +28,7 @@ const TopLeftComponentTwo = ({ loc, txcurrdata, txhtsposdata, htststdata }) => {
                     <span className={`text-4xl ${txhtsposdata === null ? 'animate-pulse text-gray-300 dark:text-gray-700' : 'text-green-600'}`}>
                         {txhtsposdata !== null ? formatNumber(txhtsposdata?.tx_new) : '000000'}
                     </span>
-                    <span className='font-extralight'>TX_HTS_POS</span>
+                    <span className='font-extralight'>HTS_POS</span>
                     <span className={`font-extralight text-xs ${txhtsposdata === null ? 'animate-pulse text-gray-300' : (parseInt(case_finding_gap) < 0 ? 'text-red-600' : 'text-green-600')}`}>{formatNumber(case_finding_gap)}</span>
                     <span className='font-extralight text-xs'>CASE FINDING GAP</span>
                 </div> 
@@ -39,7 +39,7 @@ const TopLeftComponentTwo = ({ loc, txcurrdata, txhtsposdata, htststdata }) => {
                     <span className={`text-4xl ${htststdata === null ? 'animate-pulse text-gray-300 dark:text-gray-700' : 'text-green-600'}`}>
                         {htststdata !== null ? formatNumber(htststdata?.htstGap?.total_hts_tst) : '000000'}
                     </span>
-                    <span className='font-extralight'>TX_HTS_TST</span>
+                    <span className='font-extralight'>HTS_TST</span>
                     <span className={`font-extralight text-xs ${htststdata === null ? 'animate-pulse text-gray-300' : (parseInt(htststdata?.htstGap?.test_gap) < 0 ? 'text-red-600' : 'text-green-600')}`}>
                         {htststdata !== null ? formatNumber(htststdata?.htstGap?.test_gap) : '000000'}
                     </span>

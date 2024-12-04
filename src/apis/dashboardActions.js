@@ -384,12 +384,12 @@ export const fetchReturned = async ( data, setReturned, setError, setFetching ) 
     setFetching(false);
 }
 
-export const fetchTestingTATDays = async ( setTestingtatdays, setError, setFetching ) => {
+export const fetchTestingTATDays = async ( data, setTestingtatdays, setError, setFetching ) => {
 
     setFetching(true);
 
     try{
-        const response  = await axios.get(`fetch-testing-tat-days`,
+        const response  = await axios.post(`fetch-testing-tat-days`,
             {
                 headers: { 'Accept' : 'application/json' }
             }
@@ -455,4 +455,59 @@ export const getTotal28Positives = (arr) => {
     let num = 0;
     arr.map(obj => num += parseInt(obj?.confirmed_last_28_days));
     return num;
+}
+
+
+export const fetchPostBiweeklyLGAyeilds = async ( data, setYields, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`lga-yields`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setYields(response.data?.secondPageChartData);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
+}
+
+export const fetchLGAdata = async ( data, setLgachartdata, setError, setFetching ) => {
+
+    setFetching(true);
+
+    try{
+        const response  = await axios.post(`fetch-second-page-data`,
+            data,
+            {
+                headers: { 'Accept' : 'application/json' }
+            }
+        );    
+
+        console.log(response.data);
+        setLgachartdata(response.data?.secondPageData);
+    }
+    catch (err) {
+        if (!err?.response) {
+            setError('No Response from Server');
+        } else {
+            console.log(err.response.data);
+            setError(err.response.data);
+        }
+    }
+
+    setFetching(false);
 }

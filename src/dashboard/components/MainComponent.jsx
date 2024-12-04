@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import GoogleMapComponent from '../../common/GoogleMapComponent'
-import { fetchEligibles, fetchHtsposData, fetchHtsPosindicators, fetchHtststData, fetchPvlsData, fetchReturned, fetchTestingTATDays, fetchTotalcomm, fetchTotalIIT, fetchTotalindex, fetchTotalkeypop, fetchTotalpitc, fetchTotalpmtct, fetchTxcurrData } from '../../apis/dashboardActions'
+import { fetchEligibles, fetchHtsposData, fetchHtsPosindicators, fetchHtststData, fetchLGAdata, fetchPostBiweeklyLGAyeilds, fetchPvlsData, fetchReturned, fetchTestingTATDays, fetchTotalcomm, fetchTotalIIT, fetchTotalindex, fetchTotalkeypop, fetchTotalpitc, fetchTotalpmtct, fetchTxcurrData } from '../../apis/dashboardActions'
 import { generateFilledmapMarkers } from '../../apis/functions';
 import TopLeftComponentOne from './TopLeftComponentOne';
 import TopLeftComponentTwo from './TopLeftComponentTwo';
@@ -36,6 +36,7 @@ const MainComponent = ({ active }) => {
     const [eligibles, setEligibles] = useState(null);
     const [returned, setReturned] = useState(null);
     const [testingtatdays, setTestingtatdays] = useState(null);
+    const [yields, setYields] = useState(null);
     const fy = import.meta.env.VITE_FISCAL_YEAR;
 
 
@@ -69,7 +70,8 @@ const MainComponent = ({ active }) => {
         fetchTotalIIT( { state: active, fy }, setTotaliit, setError, setFetching);
         fetchEligibles( { state: active, fy }, setEligibles, setError, setFetching);
         fetchReturned( { state: active, fy }, setReturned, setError, setFetching);
-        fetchTestingTATDays( setTestingtatdays, setError, setFetching);
+        //fetchTestingTATDays( setTestingtatdays, setError, setFetching);
+        
 
         const intervalId = setInterval(() => {
             fetchTxcurrData({ state: active, fy }, setTxcurrdata, setError, setFetching);
@@ -85,7 +87,7 @@ const MainComponent = ({ active }) => {
             fetchTotalIIT( { state: active, fy }, setTotaliit, setError, setFetching);
             fetchEligibles( { state: active, fy }, setEligibles, setError, setFetching);
             fetchReturned( { state: active, fy }, setReturned, setError, setFetching);
-            fetchTestingTATDays( setTestingtatdays, setError, setFetching);
+            //fetchTestingTATDays( setTestingtatdays, setError, setFetching);
         }, 60000); // 60 seconds
       
         return () => clearInterval(intervalId);
