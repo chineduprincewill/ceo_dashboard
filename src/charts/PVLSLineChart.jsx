@@ -10,19 +10,19 @@ const PVLSLineChart = ({ trend }) => {
         labels: trend?.PVLS_month?.data[0].split(','), // X-axis labels
         datasets: [
           {
-            label: 'Achievements',
-            data: trend?.PVLS_achievements?.data[0].split(','), // Y-axis data (corresponding to the labels)
-            borderColor: 'rgba(5, 59, 150, 1)', // Line color
-            backgroundColor: 'rgba(5, 59, 150, 0.4)', // Area color (under the line)
+            label: 'Target',
+            data: trend?.PVLS_target?.data[0].split(','), // Y-axis data (corresponding to the labels)
+            borderColor: 'rgba(75, 192, 192, 1)', // Line color
+            backgroundColor: 'rgba(75, 192, 192, 0.4)', // Area color (under the line)
             fill: true, // Whether to fill the area under the line
             tension: 0.4,  //Smoothness of the line (0 = sharp, 1 = smooth curve)
             borderWidth: 2, // Border width of the line
           },
           {
-            label: 'Targets',
-            data: trend?.PVLS_target?.data[0].split(','), // Y-axis data (corresponding to the labels)
-            borderColor: 'rgba(75, 192, 192, 1)', // Line color
-            backgroundColor: 'rgba(75, 192, 192, 0.4)', // Area color (under the line)
+            label: 'Achievement',
+            data: trend?.PVLS_achievements?.data[0].split(','), // Y-axis data (corresponding to the labels)
+            borderColor: 'rgba(5, 59, 150, 1)', // Line color
+            backgroundColor: 'rgba(5, 59, 150, 0.4)', // Area color (under the line)
             fill: true, // Whether to fill the area under the line
             tension: 0.4,  //Smoothness of the line (0 = sharp, 1 = smooth curve)
             borderWidth: 2, // Border width of the line
@@ -34,7 +34,7 @@ const PVLSLineChart = ({ trend }) => {
         responsive: true, // Make the chart responsive
         plugins: {
           legend: {
-            position: 'top', // Legend position
+            position: 'bottom', // Legend position
           },
           tooltip: {
             enabled: true, // Show tooltips
@@ -43,12 +43,14 @@ const PVLSLineChart = ({ trend }) => {
         scales: {
           x: {
             beginAtZero: true, // Start the x-axis at 0
+            grid: {
+              display: false
+            },
           },
           y: {
             beginAtZero: true, // Start the y-axis at 0
-            ticks: {
-              // Optional: Customize the y-axis tick values
-              stepSize: 20,
+            grid: {
+              display: false
             },
           },
         },

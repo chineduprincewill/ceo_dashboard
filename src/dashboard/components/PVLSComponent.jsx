@@ -4,10 +4,10 @@ import PVLSLineChart from '../../charts/PVLSLineChart'
 
 const PVLSComponent = ({ pvlsperc, pvlstrend }) => {
     return (
-        <div className='w-full md:w-[32%] space-y-1 shadow-xl rounded-md'>
-            <div className='w-full flex justify-between items-baseline border-l-2 border-green-500 p-2'>
-                <span className='text-4xl font-light uppercase'>pvls</span>
-                <span className='text-extralight text-gray-400'>3rd 95 Primary Indicator</span>
+        <div className='w-full md:w-[33%] space-y-1 shadow-xl rounded-md'>
+            <div className='w-full grid border-l-2 border-green-500 p-2'>
+                <span className='text-extralight text-gray-500'>3rd 95 Primary Indicator</span>
+                <span className='text-3xl font-light uppercase'>pvls</span>
             </div>
             <div className='w-full flex px-4'>
                 <div className='w-full md:w-1/3 space-y-4'>

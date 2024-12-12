@@ -9,7 +9,7 @@ const CustomBarComponent = ({ indicators }) => {
                     className='w-full flex justify-between items-baseline'
                 >
                     <span className='w-[40%] text-wrap text-xs text-gray-500'>Achievement</span>
-                    <span className='max-w-max border-b border-[#8ba3c9] text-xl'>
+                    <span className='max-w-max border-b border-[#8ba3c9]'>
                         { indicators ? formatNumber(indicators?.FYTotalTestedPositives?.data[0]): <span className='text-gray-300 animate-pulse'>00</span>}
                     </span>
                 </div>
@@ -17,7 +17,7 @@ const CustomBarComponent = ({ indicators }) => {
                     className='w-full flex justify-between items-baseline'
                 >
                     <span className='w-[40%] text-wrap text-xs text-gray-500'>Expectation</span>
-                    <span className='max-w-max border-b border-[#8ba3c9] text-xl'>
+                    <span className='max-w-max border-b border-[#8ba3c9]'>
                         { indicators ? formatNumber(indicators?.HTSPosTarget?.current_expectation?.y): <span className='text-gray-300 animate-pulse'>00</span> }
                     </span>
                 </div>
@@ -25,7 +25,7 @@ const CustomBarComponent = ({ indicators }) => {
                     className='w-full flex justify-between items-baseline'
                 >
                     <span className='w-[40%] text-wrap text-xs text-gray-500'>FY25</span>
-                    <span className='max-w-max border-b border-[#8ba3c9] text-xl'>
+                    <span className='max-w-max border-b border-[#8ba3c9]'>
                         { indicators ? formatNumber(indicators?.HTSPosTarget?.FY23?.y): <span className='text-gray-300 animate-pulse'>00</span> }
                     </span>
                 </div>

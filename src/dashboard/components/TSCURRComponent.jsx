@@ -4,10 +4,10 @@ import LineChart from '../../charts/LineChart'
 
 const TSCURRComponent = ({ txcurrperc, txcurrtrend }) => {
     return (
-        <div className='w-full md:w-[32%] space-y-1 shadow-xl rounded-md'>
-            <div className='w-full flex justify-between items-baseline space-y-1 border-l-2 border-green-500 p-2'>
-                <span className='text-4xl font-light uppercase'>tx_curr</span>
-                <span className='text-extralight text-gray-400'>2nd 95 Primary Indicator</span>
+        <div className='w-full md:w-[33%] space-y-1 shadow-xl rounded-md'>
+            <div className='w-full grid space-y-1 border-l-2 border-green-500 p-2'>
+                <span className='text-extralight text-gray-500'>2nd 95 Primary Indicator</span>
+                <span className='text-3xl font-light uppercase'>tx_curr</span>
             </div>
             <div className='w-full flex px-4'>
                 <div className='w-full md:w-1/3 space-y-4'>

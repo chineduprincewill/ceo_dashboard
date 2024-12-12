@@ -94,7 +94,7 @@ const MainComponent = ({ active }) => {
     }, [])
 
     return (
-        <div className='w-full grid'>
+        <div className='w-full grid space-y-4'>
             <div className='w-full grid md:flex my-2 md:justify-between space-y-4 md:space-y-0 px-4'>
                 <div className='w-full md:flex md:justify-between md:w-[49%]'>
                     <TopLeftComponentOne loc={active} />
